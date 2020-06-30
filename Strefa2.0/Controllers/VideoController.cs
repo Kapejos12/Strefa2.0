@@ -20,9 +20,8 @@ namespace Strefa2._0.Controllers
         // GET: Video
         public ActionResult Index()
         {
-            
-
-            
+            string result = execute("Iron Man 3");
+            ViewBag.Result = result;
             
             return View();
         }

@@ -26,6 +26,5 @@ namespace Strefa2._0.Tests.Controllers
 
             Assert.IsNotNull(result);
         }
-
     }
 }
