@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Strefa2._0.Controllers;
-using Xunit;
 using System.Net.Http;
-using Assert = Xunit.Assert;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Strefa2._0.Tests.Controllers
 {
+    [TestClass]
     public class FilmsAPITest
     {
         string execute(string query)
@@ -19,12 +19,12 @@ namespace Strefa2._0.Tests.Controllers
             return new HttpClient().GetAsync(url).Result.Content.ReadAsStringAsync().Result;
         }
 
-        [Fact]
+        [TestMethod]
         public void VideoAPIResponse()
         {
             string result = execute("Iron Man 3");
 
-            Assert.NotNull(result);
+            Assert.IsNotNull(result);
         }
 
     }
