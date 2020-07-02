@@ -103,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\FilmsAPITest.cs" />
+    <Compile Include="Controllers\GamesAPITest.cs" />
+    <Compile Include="Controllers\MusicAPITest.cs" />
+    <Compile Include="Controllers\BookAPITest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

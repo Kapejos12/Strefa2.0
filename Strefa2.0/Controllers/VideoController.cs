@@ -17,10 +17,17 @@ namespace Strefa2._0.Controllers
             return new HttpClient().GetAsync(url).Result.Content.ReadAsStringAsync().Result;
         }
 
+        string allvideos()
+        {
+            string url = "http://www.omdbapi.com/?apikey=5cb2a2c4&s=";
+
+            return new HttpClient().GetAsync(url).Result.Content.ReadAsStringAsync().Result;
+        }
+
         // GET: Video
         public ActionResult Index()
         {
-            string result = execute("Iron Man 3");
+            string result = allvideos();
             ViewBag.Result = result;
             
             return View();
