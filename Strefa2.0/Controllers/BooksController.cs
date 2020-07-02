@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Web;
+using System.Web.Mvc;
 
-namespace Strefa2._0.Tests.Controllers
+namespace Strefa2._0.Controllers
 {
-    [TestClass]
-    public class BookAPITest
+    public class BooksController : Controller
     {
         string execute(string query)
         {
@@ -14,12 +16,14 @@ namespace Strefa2._0.Tests.Controllers
             return new HttpClient().GetAsync(url).Result.Content.ReadAsStringAsync().Result;
         }
 
-        [TestMethod]
-        public void BookAPIResponseTest()
+        // GET: Books
+        public ActionResult Index()
         {
             string result = execute("Harry Potter");
 
-            Assert.IsNotNull(result);
+            ViewBag.Book = result;
+
+            return View();
         }
     }
 }
